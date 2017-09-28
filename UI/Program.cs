@@ -81,7 +81,7 @@ namespace UI
             if (spaceIndex > 0)
             {
                 string weatherTypeString = input.Substring(0, spaceIndex).Trim();
-                WeatherType weatherType = (WeatherType)Enum.Parse(typeof(WeatherType), weatherTypeString);
+                WeatherType weatherType = (WeatherType)Enum.Parse(typeof(WeatherType), weatherTypeString.ToUpper());
                 return weatherType;
             }
             throw new ArgumentException("\nInvalid command. Please try again.\n");
