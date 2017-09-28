@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logic\Logic.csproj">
+    <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{a068250e-5ae1-4d9e-b7a1-8c4e4d02907d}</Project>
       <Name>Logic</Name>
     </ProjectReference>
