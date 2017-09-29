@@ -1,6 +1,11 @@
 # GettingReady
 This is my implementation of the getting ready programming challenge. 
 
+## Development notes
+This was developed using Visual Studio 2017 and uses [string interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings), which requires C# 6.0 or higher to compile. I do not have
+other versions of Visual Studio installed, but it should compile with Visual Studio 2015 as well. Alternatively, it should compile
+with any compilation method outside of Visual Studio that supports C# 6.0. 
+
 ## Design choices
 
 ### Person, ClothingItem, and ClothingType
