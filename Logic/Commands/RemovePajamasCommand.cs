@@ -6,7 +6,7 @@ namespace Logic.Attributes
     [CommandAttributes(8, "Take off pajamas", typeof(RemovePajamasCommand))]
     public class RemovePajamasCommand : IGettingReadyCommand
     {
-        public string Output { get; private set; }
+        private string output;
 
         public Person Person { get; set; }
 
@@ -16,13 +16,14 @@ namespace Logic.Attributes
         {
             Person = person;
             WeatherType = weatherType;
-            Output = "Removing PJs";
+            output = "Removing PJs";
         }
 
-        public void Execute()
+        public string Execute()
         {
             var itemToRemove = Person?.Clothing?.First(item => item.ClothingType == ClothingType.Pajamas);
             Person?.Clothing?.Remove(itemToRemove);
+            return output;
         }
     }
 }

@@ -8,14 +8,10 @@ namespace Logic
     public class RulesEvaluator
     {
         private IEnumerable<IGettingReadyRule> rules;
-        Person person;
-        WeatherType weatherType;
 
-        public RulesEvaluator(IEnumerable<IGettingReadyRule> rules, Person person, WeatherType weatherType)
+        public RulesEvaluator(IEnumerable<IGettingReadyRule> rules)
         {
             this.rules = rules;
-            this.person = person;
-            this.weatherType = weatherType;
         }
 
         public bool CommandPassesRules(IGettingReadyCommand command)
@@ -24,7 +20,7 @@ namespace Logic
 
             foreach (var rule in rulesForCommand)
             {
-                if (!rule.Evaluate(person, weatherType))
+                if (!rule.Evaluate(command.Person, command.WeatherType))
                 {
                     return false; // Return early because it failed to pass a rule
                 }

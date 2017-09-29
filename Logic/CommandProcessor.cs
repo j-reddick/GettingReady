@@ -22,8 +22,8 @@ namespace Logic
             {
                 if (rulesEvaluator.CommandPassesRules(command))
                 {
-                    command.Execute();
-                    outputs.Add(command.Output);
+                    string output = command.Execute();
+                    outputs.Add(output);
                 }
                 else
                 {

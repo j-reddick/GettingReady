@@ -8,11 +8,6 @@
     public interface IGettingReadyCommand
     {
         /// <summary>
-        /// The output this command provides describing what action was taken.
-        /// </summary>
-        string Output { get; }
-
-        /// <summary>
         /// The Person instance on which this command will execute.
         /// </summary>
         Person Person { get; }
@@ -27,6 +22,7 @@
         /// Executes the defined command on the contained Person instance 
         /// using WeatherType if applicable.
         /// </summary>
-        void Execute();
+        /// <returns>The text designating what was done.</returns>
+        string Execute();
     }
 }

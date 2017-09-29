@@ -1,6 +1,7 @@
 ﻿using Logic.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -33,7 +34,7 @@ namespace Logic.Factories
 
             StringBuilder output = new StringBuilder();
 
-            foreach (var commandKeyValuePair in CommandLookup)
+            foreach (var commandKeyValuePair in CommandLookup.OrderBy(item => item.Key))
             {
                 output.AppendLine($"{commandKeyValuePair.Key}: \t {commandKeyValuePair.Value.Description}");
             }

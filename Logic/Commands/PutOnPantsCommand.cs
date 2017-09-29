@@ -5,7 +5,7 @@ namespace Logic.Attributes
     [CommandAttributes(6, "Put on pants", typeof(PutOnPantsCommand))]
     public class PutOnPantsCommand : IGettingReadyCommand
     {
-        public string Output { get; private set; }
+        private string output;
 
         public Person Person { get; set; }
 
@@ -15,12 +15,13 @@ namespace Logic.Attributes
         {
             Person = person;
             WeatherType = weatherType;
-            Output = weatherType == WeatherType.HOT ? "shorts" : "pants";
+            output = weatherType == WeatherType.HOT ? "shorts" : "pants";
         }
 
-        public void Execute()
+        public string Execute()
         {
-            Person.Clothing.Add(new ClothingItem(Output, ClothingType.Pants));
+            Person.Clothing.Add(new ClothingItem(output, ClothingType.Pants));
+            return output;
         }
     }
 }

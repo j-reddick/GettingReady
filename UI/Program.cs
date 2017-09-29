@@ -19,7 +19,6 @@ namespace UI
             rulesRepository = new RulesRepository();
             Console.WriteLine("This is the getting ready app. Please enter a weather type and a list of commands.");
             Console.WriteLine("If you need help, enter \"help\", if you are finished, enter \"exit\"\n");
-
             string input;
             while ((input = Console.ReadLine()).ToLower() != "exit")
             {
@@ -45,7 +44,7 @@ namespace UI
                 IEnumerable<IGettingReadyRule> rules = rulesRepository.GetRules();
 
                 // Compose the rules evaluator to run through all rules for our commands
-                RulesEvaluator evaluator = new RulesEvaluator(rules, person, weatherType);
+                RulesEvaluator evaluator = new RulesEvaluator(rules);
 
                 // Compose the command processor by giving it our commands and the rules evaluator to use
                 // for processing the rules on each command
